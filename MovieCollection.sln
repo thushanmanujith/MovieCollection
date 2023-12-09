@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.Core", "MovieCollection.Core\MovieCollection.Core.csproj", "{B544D058-859B-4CA2-B2C0-FA01C7DAA138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MovieCollection.Domain", "MovieCollection.Domain", "{A1DAF799-5C76-42D8-8511-0F08BD472E5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MovieCollection.UserAdministration", "MovieCollection.UserAdministration", "{24592861-7D8A-49D6-81E9-FD87C2FE099B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.UserAdministration.Domain", "MovieCollection.Domain\MovieCollection.UserAdministration\MovieCollection.UserAdministration.Domain\MovieCollection.UserAdministration.Domain.csproj", "{802B85F1-0191-4E60-8B8B-F820CF7D76A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.WebAPI", "MovieCollection.WebAPI\MovieCollection.WebAPI.csproj", "{8D6168C8-1648-4F81-8FC8-898800846398}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.UserAdministration.Persistant", "MovieCollection.Domain\MovieCollection.UserAdministration\MovieCollection.UserAdministration.Persist\MovieCollection.UserAdministration.Persistant.csproj", "{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MovieCollection.Movie", "MovieCollection.Movie", "{0E02CCB3-B32B-42A5-8499-932E90D6456B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.Movie.Domain", "MovieCollection.Domain\MovieCollection.Movie\MovieCollection.Movie.Domain\MovieCollection.Movie.Domain.csproj", "{EFF45779-0F87-4151-A180-6F51F024D31A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.Movie.Persistence", "MovieCollection.Domain\MovieCollection.Movie\MovieCollection.Movie.Persistence\MovieCollection.Movie.Persistence.csproj", "{2CF3530A-BE76-4AED-AF32-31232C26DA41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollection.Movie.Test", "MovieCollection.Domain\MovieCollection.Movie\MovieCollection.Movie.Test\MovieCollection.Movie.Test.csproj", "{12E6C990-0F90-4E57-8014-DA1C274397D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCollection.UserAdministration.Test", "MovieCollection.Domain\MovieCollection.UserAdministration\MovieCollection.UserAdministration.Test\MovieCollection.UserAdministration.Test.csproj", "{4543B0B2-1360-4F3E-9EED-E56EC910A647}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B544D058-859B-4CA2-B2C0-FA01C7DAA138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B544D058-859B-4CA2-B2C0-FA01C7DAA138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B544D058-859B-4CA2-B2C0-FA01C7DAA138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B544D058-859B-4CA2-B2C0-FA01C7DAA138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802B85F1-0191-4E60-8B8B-F820CF7D76A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802B85F1-0191-4E60-8B8B-F820CF7D76A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802B85F1-0191-4E60-8B8B-F820CF7D76A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802B85F1-0191-4E60-8B8B-F820CF7D76A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6168C8-1648-4F81-8FC8-898800846398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6168C8-1648-4F81-8FC8-898800846398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6168C8-1648-4F81-8FC8-898800846398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6168C8-1648-4F81-8FC8-898800846398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF45779-0F87-4151-A180-6F51F024D31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF45779-0F87-4151-A180-6F51F024D31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF45779-0F87-4151-A180-6F51F024D31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF45779-0F87-4151-A180-6F51F024D31A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CF3530A-BE76-4AED-AF32-31232C26DA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF3530A-BE76-4AED-AF32-31232C26DA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF3530A-BE76-4AED-AF32-31232C26DA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF3530A-BE76-4AED-AF32-31232C26DA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E6C990-0F90-4E57-8014-DA1C274397D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E6C990-0F90-4E57-8014-DA1C274397D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E6C990-0F90-4E57-8014-DA1C274397D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E6C990-0F90-4E57-8014-DA1C274397D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4543B0B2-1360-4F3E-9EED-E56EC910A647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4543B0B2-1360-4F3E-9EED-E56EC910A647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4543B0B2-1360-4F3E-9EED-E56EC910A647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4543B0B2-1360-4F3E-9EED-E56EC910A647}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24592861-7D8A-49D6-81E9-FD87C2FE099B} = {A1DAF799-5C76-42D8-8511-0F08BD472E5A}
+		{802B85F1-0191-4E60-8B8B-F820CF7D76A9} = {24592861-7D8A-49D6-81E9-FD87C2FE099B}
+		{E3DF93C7-1ADB-4D7F-B4C7-0192DC206001} = {24592861-7D8A-49D6-81E9-FD87C2FE099B}
+		{0E02CCB3-B32B-42A5-8499-932E90D6456B} = {A1DAF799-5C76-42D8-8511-0F08BD472E5A}
+		{EFF45779-0F87-4151-A180-6F51F024D31A} = {0E02CCB3-B32B-42A5-8499-932E90D6456B}
+		{2CF3530A-BE76-4AED-AF32-31232C26DA41} = {0E02CCB3-B32B-42A5-8499-932E90D6456B}
+		{12E6C990-0F90-4E57-8014-DA1C274397D1} = {0E02CCB3-B32B-42A5-8499-932E90D6456B}
+		{4543B0B2-1360-4F3E-9EED-E56EC910A647} = {24592861-7D8A-49D6-81E9-FD87C2FE099B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {259E4B70-9071-478B-B638-E694EBE5B8A2}
+	EndGlobalSection
+EndGlobal
