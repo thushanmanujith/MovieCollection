@@ -17,3 +17,9 @@ In this approach, the application core that contains the business domain informa
 
 ### Solution Architecture:
 ![Solution Architecture](https://github.com/thushanmanujith/MovieCollection/blob/main/blob/Architecture.jpg?raw=true)
+
+### CQRS implementation base on Mediator pattern
+![CQRS implementation](https://github.com/thushanmanujith/blob/CQRS_Implementation.png?raw=true)
+
+### Entity structure
+![CQRS implementation](https://github.com/thushanmanujith/blob/EntityStructure.png?raw=true)
