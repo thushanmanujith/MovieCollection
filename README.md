@@ -19,7 +19,38 @@ In this approach, the application core that contains the business domain informa
 ![Solution Architecture](https://github.com/thushanmanujith/MovieCollection/blob/main/blob/Architecture.jpg?raw=true)
 
 ### CQRS implementation base on Mediator pattern
-![CQRS implementation](https://github.com/thushanmanujith/blob/CQRS_Implementation.png?raw=true)
+![CQRS implementation](https://github.com/thushanmanujith/MovieCollection/blob/main/blob/CQRS_Implementation.png?raw=true)
 
 ### Entity structure
-![CQRS implementation](https://github.com/thushanmanujith/blob/EntityStructure.png?raw=true)
+![CQRS implementation](https://github.com/thushanmanujith/MovieCollection/blob/main/blob/EntityStructure.png?raw=true)
+
+### API Guide
+API base on role based authentication and currently support two main roles:
+* User
+* Admin
+  
+Defult admin user account available with seed data.
+- Username: test@mail.com
+- passwoard: Test@123
+
+Initial user registration and sign-in can proceed with below endpoints:
+- POST /api/Auth/signup
+- POST /api/Auth/login
+- GET /api/Auth/user
+
+Admin User can change user role:
+- POST /api/Auth/access
+
+User can create their own movie collection with endpoints:
+- POST /api/Movie/collection/add
+- POST /api/Movie/collection/add_movie/{movieId}
+- DELETE /api/Movie/collection/remove_movie/{movieId}
+
+User can their own collection and others by this endpoint:
+- GET /api/Movie/collection/{userId}
+
+User can search movies in a collection by:
+- GET /api/Movie/search
+  
+Admin user can add movies to the system with endpoint:
+- POST /api/Movie/add
