@@ -16,4 +16,4 @@ The hexagonal architecture divides the system into loosely-coupled interchangeab
 In this approach, the application core that contains the business domain information and it is surrounded by a layer that contains adapters handling bi-directional communication with other components in a generic way.
 
 ### Solution Architecture:
-![Solution Architecture](https://github.com/thushanmanujith/MovieCollection/blob/Architecture.jpg?raw=true)
+![Solution Architecture](https://github.com/thushanmanujith/MovieCollection/blob/main/blob/Architecture.jpg?raw=true)
