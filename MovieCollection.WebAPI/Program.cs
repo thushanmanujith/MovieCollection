@@ -16,21 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddCors(options =>
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
-    options.AddPolicy(MyAllowSpecificOrigins, builder =>
-    {
-        builder
-            .SetIsOriginAllowedToAllowWildcardSubdomains()
-            .WithOrigins(
-                "http://localhost:4200",
-                "http://localhost:63102"
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
-    });
-});
+    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+}));
 
 #region Swagger
 
@@ -134,7 +123,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors("corsapp");
 
 app.UseExceptionHandler("/errors");
 

@@ -15,7 +15,7 @@ namespace MovieCollection.WebAPI.Authorization
         {
             public async Task OnResourceExecutionAsync(ResourceExecutingContext context, ResourceExecutionDelegate next)
             {
-                if (context.HttpContext.User.IsInRole(Roles.User))
+                if (context.HttpContext.User.IsInRole(Roles.User) || context.HttpContext.User.IsInRole(Roles.Admin))
                     await next();
                 else
                     context.Result = new StatusCodeResult(StatusCodes.Status403Forbidden);
