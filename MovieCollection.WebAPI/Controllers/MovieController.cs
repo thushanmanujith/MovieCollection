@@ -52,10 +52,10 @@ namespace MovieCollection.WebAPI.Controllers
         [RequiresUserAccess]
         [ProducesResponseType(typeof(List<DomainMovieDto.MovieEntityDto>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.Forbidden)]
-        [HttpGet("search")]
-        public async Task<IActionResult> SearchMoviesByTitle(SearchMoviesDto searchMoviesDto)
+        [HttpGet("collection/{collectionId}/search")]
+        public async Task<IActionResult> SearchMoviesByTitle(int collectionId, string searchText)
         {
-            var moveCollection = await _movieQueries.SearchMoviesByTitleAsync(searchMoviesDto.Tiltle, searchMoviesDto.CollectionId);
+            var moveCollection = await _movieQueries.SearchMoviesByTitleAsync(searchText, collectionId);
             return Ok(moveCollection);
         }
 

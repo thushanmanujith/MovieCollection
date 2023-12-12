@@ -80,8 +80,8 @@ namespace MovieCollection.Movie.Persistence
 
         public async Task<List<Domain.Entities.Movie>> SearchMoviesByTitle(string title, int collectionId)
         {
-            var movieIds = _dataContext.MovieCollection.Where(m => m.CollectionId.Equals(collectionId)).Select(c => c.CollectionId).ToList();
-            return await _dataContext.Movie.Where(m => movieIds.Contains(m.Id) && m.Title.ToLower().StartsWith(title.ToLower())).ToListAsync();
+            var movieIds = _dataContext.MovieCollection.Where(m => m.CollectionId.Equals(collectionId)).Select(c => c.MovieId).ToList();
+            return await _dataContext.Movie.Where(m => movieIds.Contains(m.Id) && m.Title.ToLower().Contains(title.ToLower())).ToListAsync();
         }
     }
 }
