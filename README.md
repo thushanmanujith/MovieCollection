@@ -50,7 +50,7 @@ User can their own collection and others by this endpoint:
 - GET /api/Movie/collection/{userId}
 
 User can search movies in a collection by:
-- GET /api/Movie/search
+- GET /api/Movie/collection/{collectionId}/search?searchText=""
   
 Admin user can add movies to the system with endpoint:
 - POST /api/Movie/add
