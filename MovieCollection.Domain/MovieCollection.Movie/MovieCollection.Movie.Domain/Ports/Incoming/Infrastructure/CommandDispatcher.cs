@@ -1,8 +1,8 @@
-﻿using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands;
-using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Handlers;
+﻿using MovieCollection.Movie.Domain.Ports.Incoming.Commands;
+using MovieCollection.Movie.Domain.Ports.Incoming.Commands.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MovieCollection.UserAdministration.Domain.Infrastructure
+namespace MovieCollection.Movie.Domain.Ports.Incoming.Infrastructure
 {
     public class CommandDispatcher : ICommandDispatcher
     {

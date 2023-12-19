@@ -1,6 +1,6 @@
-﻿using MovieCollection.Movie.Domain.Ports.Incoming.Commands;
+﻿using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands;
 
-namespace MovieCollection.Movie.Domain.Infrastructure
+namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure
 {
     public interface ICommandDispatcher
     {

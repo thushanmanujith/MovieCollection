@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Moq;
-using MovieCollection.UserAdministration.Domain.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Handlers;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.OutGoing;
 using NUnit.Framework;
 

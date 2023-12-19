@@ -4,7 +4,6 @@ using MovieCollection.Core.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieCollection.UserAdministration.Domain.Entities;
-using MovieCollection.UserAdministration.Domain.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Queries;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Results;
@@ -12,10 +11,11 @@ using MovieCollection.WebAPI.Authorization;
 using MovieCollection.WebAPI.Exceptions;
 using System.Net;
 using MovieCollection.UserAdministration.Domain.DTOs;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure;
 
 namespace MovieCollection.WebAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]

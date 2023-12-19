@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MovieCollection.Core.DTOs;
 using MovieCollection.Core.Enums;
 using MovieCollection.Core.Exceptions;
-using MovieCollection.Movie.Domain.Infrastructure;
+using MovieCollection.Movie.Domain.Ports.Incoming.Infrastructure;
 using MovieCollection.Movie.Domain.Ports.Incoming.Commands;
 using MovieCollection.Movie.Domain.Ports.Incoming.Commands.Results;
 using MovieCollection.Movie.Domain.Ports.Incoming.Queries;

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MovieCollection.Movie.Domain.Entities.Collection">
+    <Position X="7.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAEAAAAAAAAggAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Collection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Entities.Movie">
+    <Position X="11.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAgAEAAAAAAAAAgAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Entities\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Entities.MovieCollection">
+    <Position X="7.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAUAAIAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MovieCollection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Collection" />
+      <Property Name="Movie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Entities.User">
+    <Position X="4.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAECAACgAAABAEAAAAAAgAQACAAgICAAAAAAAAAg=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.AddCollectionCommand">
+    <Position X="4.75" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAiAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\AddCollectionCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.Handlers.AddCollectionCommandHandler">
+    <Position X="4.75" Y="13" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\Handlers\AddCollectionCommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.Results.AddMovieToCollectionResult">
+    <Position X="4.75" Y="15" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAACAAAIAAAAAAAgAAACAAAAAACAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\Results\AddMovieToCollectionResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Domain.Infrastructure.CommandDispatcher">
+    <Position X="1" Y="12.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Infrastructure\CommandDispatcher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.ICommand">
+    <Position X="7.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.ICommand&lt;T&gt;">
+    <Position X="9.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.Handlers.ICommandHandler&lt;T&gt;">
+    <Position X="11.25" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\Handlers\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MovieCollection.Movie.Domain.Ports.Incoming.Commands.Handlers.ICommandHandler&lt;TCommand, TResult&gt;">
+    <Position X="8" Y="13.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Ports\Incoming\Commands\Handlers\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MovieCollection.Movie.Domain.Infrastructure.ICommandDispatcher">
+    <Position X="1" Y="11.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ICommandDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

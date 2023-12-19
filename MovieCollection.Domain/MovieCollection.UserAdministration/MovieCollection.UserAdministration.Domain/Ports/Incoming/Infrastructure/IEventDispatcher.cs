@@ -1,6 +1,6 @@
 ﻿using MovieCollection.UserAdministration.Domain.Events;
 
-namespace MovieCollection.UserAdministration.Domain.Infrastructure
+namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure
 {
     public interface IEventDispatcher
     {

@@ -2,7 +2,7 @@
 using MovieCollection.UserAdministration.Domain.Events;
 using MovieCollection.UserAdministration.Domain.Events.Handlers;
 
-namespace MovieCollection.UserAdministration.Domain.Infrastructure
+namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure
 {
     public class EventDispatcher : IEventDispatcher
     {

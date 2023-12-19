@@ -1,6 +1,6 @@
 ﻿using MovieCollection.Movie.Domain.Events;
 
-namespace MovieCollection.Movie.Domain.Infrastructure
+namespace MovieCollection.Movie.Domain.Ports.Incoming.Infrastructure
 {
     public interface IEventDispatcher
     {
