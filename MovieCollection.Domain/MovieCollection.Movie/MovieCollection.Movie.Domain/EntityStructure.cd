@@ -24,8 +24,8 @@
       <FileName>Entities\MovieCollection.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Collection" />
       <Property Name="Movie" />
+      <Property Name="Collection" />
     </ShowAsAssociation>
   </Class>
   <Class Name="MovieCollection.Movie.Domain.Entities.User">
@@ -58,11 +58,11 @@
       <FileName>Ports\Incoming\Commands\Results\AddMovieToCollectionResult.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MovieCollection.Movie.Domain.Infrastructure.CommandDispatcher">
-    <Position X="1" Y="12.75" Width="2.25" />
+  <Class Name="MovieCollection.Movie.Domain.Ports.Incoming.Infrastructure.CommandDispatcher">
+    <Position X="1" Y="12" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
-      <FileName>Infrastructure\CommandDispatcher.cs</FileName>
+      <FileName>Ports\Incoming\Infrastructure\CommandDispatcher.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -94,11 +94,11 @@
       <FileName>Ports\Incoming\Commands\Handlers\ICommandHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MovieCollection.Movie.Domain.Infrastructure.ICommandDispatcher">
-    <Position X="1" Y="11.25" Width="2.25" />
+  <Interface Name="MovieCollection.Movie.Domain.Ports.Incoming.Infrastructure.ICommandDispatcher">
+    <Position X="1" Y="10.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Infrastructure\ICommandDispatcher.cs</FileName>
+      <FileName>Ports\Incoming\Infrastructure\ICommandDispatcher.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
