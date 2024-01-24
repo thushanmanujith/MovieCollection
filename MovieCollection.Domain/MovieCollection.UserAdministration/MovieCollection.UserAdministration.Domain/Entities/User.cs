@@ -50,6 +50,11 @@ namespace MovieCollection.UserAdministration.Domain.Entities
             LastName = lastName;
         }
 
+        public void UpdateUserPassword(string hashedPassword)
+        {
+            HashedPassword = hashedPassword;
+        }
+
         public void Activate()
         {
             IsActive = true;

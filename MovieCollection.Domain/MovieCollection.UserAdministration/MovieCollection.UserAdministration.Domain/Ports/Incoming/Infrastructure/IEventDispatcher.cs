@@ -1,9 +1,9 @@
-﻿using MovieCollection.UserAdministration.Domain.Events;
+﻿using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events;
 
 namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure
 {
     public interface IEventDispatcher
     {
-        Task RaiseEvent<T>(T @event) where T : IEvent;
+        Task RaiseEventAsync<T>(T @event) where T : IEvent;
     }
 }

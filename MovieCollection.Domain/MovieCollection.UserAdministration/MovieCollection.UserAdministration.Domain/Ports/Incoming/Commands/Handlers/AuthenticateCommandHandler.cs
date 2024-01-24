@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MovieCollection.UserAdministration.Domain.Entities;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.OutGoing;
 using MovieCollection.UserAdministration.Domain.Utility;
 
@@ -9,10 +11,13 @@ namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Hand
     {
         private readonly TokenFactory _tokenFactory;
         private IUserAdministrationPersistence _userAdministrationPersistence;
-        public AuthenticateCommandHandler(TokenFactory tokenFactory, IUserAdministrationPersistence userAdministrationPersistence)
+        private IEventDispatcher _eventDispatcher;
+
+        public AuthenticateCommandHandler(TokenFactory tokenFactory, IUserAdministrationPersistence userAdministrationPersistence, IEventDispatcher eventDispatcher)
         {
             _tokenFactory = tokenFactory;
             _userAdministrationPersistence = userAdministrationPersistence;
+            _eventDispatcher = eventDispatcher;
         }
 
         public async Task<UserToken> Handle(AuthenticateCommand command)
@@ -26,9 +31,15 @@ namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Hand
 
             var hasher = new PasswordHasher<string>();
             var passwordVerificationResult = hasher.VerifyHashedPassword(command.Email, user.HashedPassword, command.Password);
+            
+            if (passwordVerificationResult == PasswordVerificationResult.SuccessRehashNeeded)
+            {
+                await _eventDispatcher.RaiseEventAsync(new ReHashedPasswordEvent(user, command.Password));
+                return _tokenFactory.CreateUserToken(user.Id, command.Email, user.UserRole);
+            }
 
             if (passwordVerificationResult != PasswordVerificationResult.Success)
-                throw new Exception("Inavlid password");
+            throw new Exception("Inavlid password");
 
             return _tokenFactory.CreateUserToken(user.Id, command.Email, user.UserRole);
         }

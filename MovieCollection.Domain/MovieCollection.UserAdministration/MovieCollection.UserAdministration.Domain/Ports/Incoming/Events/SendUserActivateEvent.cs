@@ -1,4 +1,4 @@
-﻿namespace MovieCollection.UserAdministration.Domain.Events
+﻿namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Events
 {
     public class SendUserActivateEvent : IEvent
     {

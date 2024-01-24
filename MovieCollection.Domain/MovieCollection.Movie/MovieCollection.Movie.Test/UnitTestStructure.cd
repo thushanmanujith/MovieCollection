@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MovieCollection.Movie.Test.TestBase">
+    <Position X="7" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAgAAAAAQAAAAAAACAAAABAAAAAAAAA=</HashCode>
+      <FileName>TestBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Test.Port.Incoming.Commands.AddCollectionCommandTests">
+    <Position X="1" Y="3.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Port\Incoming\Commands\AddCollectionCommandTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Test.Port.Incoming.Commands.AddMovieToCollectionCommandTests">
+    <Position X="7" Y="3.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Port\Incoming\Commands\AddMovieToCollectionCommandTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieCollection.Movie.Test.Port.Incoming.Commands.RemoveMovieFromCollectionCommandTests">
+    <Position X="12.5" Y="3.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAIAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Port\Incoming\Commands\RemoveMovieFromCollectionCommandTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

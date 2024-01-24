@@ -1,4 +1,6 @@
-﻿namespace MovieCollection.UserAdministration.Domain.Events.Handlers
+﻿using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events;
+
+namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Events.Handlers
 {
     public class SendUserActivateEventHandler : IEventHandler<SendUserActivateEvent>
     {

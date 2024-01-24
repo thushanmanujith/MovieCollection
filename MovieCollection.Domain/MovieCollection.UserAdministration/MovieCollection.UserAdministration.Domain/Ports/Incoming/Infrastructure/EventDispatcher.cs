@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MovieCollection.UserAdministration.Domain.Events;
-using MovieCollection.UserAdministration.Domain.Events.Handlers;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events.Handlers;
 
 namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure
 {
@@ -13,7 +13,7 @@ namespace MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructur
             _serviceProvider = serviceProvider;
         }
 
-        public async Task RaiseEvent<T>(T @event) where T : IEvent
+        public async Task RaiseEventAsync<T>(T @event) where T : IEvent
         {
             var handlers = _serviceProvider.GetServices<IEventHandler<T>>().ToList();
             if (!handlers.Any())

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MovieCollection.UserAdministration.Domain.Events.Handlers;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Handlers;
+using MovieCollection.UserAdministration.Domain.Ports.Incoming.Events.Handlers;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Queries;
 using MovieCollection.UserAdministration.Domain.Ports.OutGoing;
