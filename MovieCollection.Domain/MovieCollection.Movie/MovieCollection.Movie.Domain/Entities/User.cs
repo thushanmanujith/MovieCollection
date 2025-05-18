@@ -26,7 +26,7 @@ namespace MovieCollection.Movie.Domain.Entities
             CreatedOn = DateTime.Now;
         }
 
-        public User(int id, string email, string hashedPassword, string firstName, string lastName, UserRole userRole)
+        public User(int id, string email, string hashedPassword, string firstName, string lastName, UserRole userRole, DateTime createdOn)
         {
             Id = id;
             Email = email.ToLowerInvariant();
@@ -35,7 +35,7 @@ namespace MovieCollection.Movie.Domain.Entities
             LastName = lastName;
             UserRole = userRole;
             IsActive = false;
-            CreatedOn = DateTime.Now;
+            CreatedOn = createdOn;
         }
 
         public void SetUserRole(UserRole userRole)

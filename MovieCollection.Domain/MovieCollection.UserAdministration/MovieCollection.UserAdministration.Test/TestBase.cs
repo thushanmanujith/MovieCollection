@@ -5,14 +5,16 @@ using Moq;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Commands.Handlers;
 using MovieCollection.UserAdministration.Domain.Ports.Incoming.Infrastructure;
 using MovieCollection.UserAdministration.Domain.Ports.OutGoing;
+using MovieCollection.UserAdministration.Domain.Settings;
+using MovieCollection.UserAdministration.Domain.Utility;
 using NUnit.Framework;
 
 namespace MovieCollection.UserAdministration.Test
 {
-    [SetUpFixture]
     public class TestBase
     {
         protected IHost Host;
+        protected IServiceScope Scope;
         protected ICommandDispatcher commandDispatcher;
         protected Mock<IUserAdministrationPersistence> userAdministrationPersistenceMock = new Mock<IUserAdministrationPersistence>();
 
@@ -24,6 +26,17 @@ namespace MovieCollection.UserAdministration.Test
                 .ConfigureHostConfiguration(config => new ConfigurationBuilder())
                 .ConfigureServices(services =>
                 {
+                    var jwtSettings = new JwtSettings
+                    {
+                        Secret = "test-secret-key",
+                        Issuer = "test-issuer",
+                    };
+                    services.AddSingleton(jwtSettings);
+                    services.AddSingleton<TokenFactory>();
+
+                    var eventDispatcherMock = new Mock<IEventDispatcher>();
+                    services.AddScoped(_ => eventDispatcherMock.Object);
+
                     services.AddScoped(_ => userAdministrationPersistenceMock.Object);
                     services.AddScoped<ICommandDispatcher, CommandDispatcher>();
                     AddInterfaceImplementers(services, typeof(ICommandHandler<>));
@@ -31,8 +44,19 @@ namespace MovieCollection.UserAdministration.Test
                 })
                 .ConfigureHostConfiguration(config => new ConfigurationBuilder())
                 .Build();
+        }
 
-            commandDispatcher = Host.Services.GetService(typeof(ICommandDispatcher)) as ICommandDispatcher;
+        [SetUp]
+        public void CreateScope()
+        {
+            Scope = Host.Services.CreateScope();
+            commandDispatcher = Scope.ServiceProvider.GetRequiredService<ICommandDispatcher>();
+        }
+
+        [TearDown]
+        public void DisposeScope()
+        {
+            Scope.Dispose();
         }
 
         private static void AddInterfaceImplementers(IServiceCollection services, Type interfaceType)

@@ -92,6 +92,7 @@ namespace MovieCollection.WebAPI.Controllers
             return Ok(users);
         }
 
+        [Authorize]
         [ProducesResponseType(typeof(UserEntityDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ApiProblem), (int)HttpStatusCode.Forbidden)]
         [HttpGet("user")]

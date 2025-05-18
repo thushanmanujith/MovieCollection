@@ -9,10 +9,10 @@ using NUnit.Framework;
 
 namespace MovieCollection.Movie.Test
 {
-    [SetUpFixture]
     public class TestBase
     {
         protected IHost Host;
+        protected IServiceScope Scope;
         protected ICommandDispatcher commandDispatcher;
         protected Mock<IMoviePersistence> moviePersistenceMock = new Mock<IMoviePersistence>();
 
@@ -31,8 +31,19 @@ namespace MovieCollection.Movie.Test
                 })
                 .ConfigureHostConfiguration(config => new ConfigurationBuilder())
                 .Build();
+        }
 
-            commandDispatcher = Host.Services.GetService(typeof(ICommandDispatcher)) as ICommandDispatcher;
+        [SetUp]
+        public void CreateScope()
+        {
+            Scope = Host.Services.CreateScope();
+            commandDispatcher = Scope.ServiceProvider.GetRequiredService<ICommandDispatcher>();
+        }
+
+        [TearDown]
+        public void DisposeScope()
+        {
+            Scope.Dispose();
         }
 
         private static void AddInterfaceImplementers(IServiceCollection services, Type interfaceType)

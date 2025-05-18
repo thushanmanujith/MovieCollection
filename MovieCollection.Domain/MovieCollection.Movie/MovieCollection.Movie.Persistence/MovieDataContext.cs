@@ -31,7 +31,7 @@ namespace MovieCollection.Movie.Persistence
             modelBuilder.Entity<User>().HasKey(x => x.Id);
             modelBuilder.Entity<User>().Property(x => x.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<User>().HasData(
-                new User(1, "test@mail.com", "AQAAAAEAACcQAAAAEAap7bv4XkwO9GMc9E19yA5qcnHJYwttBDlZmUODzn/h2Bx6DQOl5VMOg09am5cAWA==", "Super", "Admin", UserRole.Admin) //pass: Test@123
+                new User(1, "test@mail.com", "AQAAAAEAACcQAAAAEAap7bv4XkwO9GMc9E19yA5qcnHJYwttBDlZmUODzn/h2Bx6DQOl5VMOg09am5cAWA==", "Super", "Admin", UserRole.Admin, new DateTime(2024, 01, 01)) //pass: Test@123
                 );
         }
 

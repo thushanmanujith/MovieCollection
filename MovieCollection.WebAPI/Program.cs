@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MovieCollection.Movie.Persistence;
 using MovieCollection.WebAPI;
-using System;
 using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

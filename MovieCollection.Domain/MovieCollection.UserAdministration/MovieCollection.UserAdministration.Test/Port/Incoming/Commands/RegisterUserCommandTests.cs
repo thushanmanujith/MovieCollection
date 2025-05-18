@@ -20,7 +20,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
 
             var registerUserResult = commandDispatcher.Dispatch<RegisterUserCommand, RegisterUserResult>(registerUserCommand).Result;
 
-            Assert.AreEqual(registerUserResult.IsSuccess, true);
+            Assert.That(registerUserResult.IsSuccess, Is.True);
         }
     }
 }

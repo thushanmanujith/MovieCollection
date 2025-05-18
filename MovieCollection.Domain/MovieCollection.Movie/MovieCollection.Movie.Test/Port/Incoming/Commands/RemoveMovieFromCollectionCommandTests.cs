@@ -13,7 +13,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
         public async Task Dispatch_ShoulRemoveMovieFromCollection()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var collection = new Collection(1, "Test Collection", user.Id);
             var removeMovieFromCollectionCommand = new RemoveMovieFromCollectionCommand(user.Id, movie.Id);
@@ -26,14 +26,14 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var removeMovieFromCollectionResult = commandDispatcher.Dispatch<RemoveMovieFromCollectionCommand, RemoveMovieFromCollectionResult>(removeMovieFromCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(removeMovieFromCollectionResult.IsSuccess, true);
+            Assert.That(removeMovieFromCollectionResult.IsSuccess, Is.True);
         }
 
         [Test]
         public async Task Dispatch_WhenUserDoesNotHaveCollection_ShouldRaiseCollectionNotFoundError()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var removeMovieFromCollectionCommand = new RemoveMovieFromCollectionCommand(user.Id, movie.Id);
 
@@ -43,7 +43,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var removeMovieFromCollectionResult = commandDispatcher.Dispatch<RemoveMovieFromCollectionCommand, RemoveMovieFromCollectionResult>(removeMovieFromCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(removeMovieFromCollectionResult.CollectionNotFound, true);
+            Assert.That(removeMovieFromCollectionResult.CollectionNotFound, Is.True);
         }
 
 
@@ -52,7 +52,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
         {
             // Arrange
             var movieId = 1;
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var collection = new Collection(1, "Test Collection", user.Id);
             var removeMovieFromCollectionCommand = new RemoveMovieFromCollectionCommand(user.Id, movieId);
 
@@ -63,7 +63,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var removeMovieFromCollectionResult = commandDispatcher.Dispatch<RemoveMovieFromCollectionCommand, RemoveMovieFromCollectionResult>(removeMovieFromCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(removeMovieFromCollectionResult.MoveNotFound, true);
+            Assert.That(removeMovieFromCollectionResult.MoveNotFound, Is.True);
         }
     }
 }

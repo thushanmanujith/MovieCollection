@@ -13,7 +13,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
         public async Task Dispatch_ShoulAddCollection()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var movieIds = new List<int> { movie.Id };
             var addCollectionCommand = new AddCollectionCommand("My Collection", user.Id, movieIds);
@@ -29,14 +29,14 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var addCollectionResult = commandDispatcher.Dispatch<AddCollectionCommand, AddCollectionResult>(addCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(addCollectionResult.IsSuccess, true);
+            Assert.That(addCollectionResult.IsSuccess, Is.True);
         }
 
         [Test]
         public async Task Dispatch_WhenUserCollectionAlreadyExsist_ShouldRaiseMoveCollectionAlreadyExistError()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var movieIds = new List<int> { movie.Id };
             var addCollectionCommand = new AddCollectionCommand("My Collection", user.Id, movieIds);
@@ -48,7 +48,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var addCollectionResult = commandDispatcher.Dispatch<AddCollectionCommand, AddCollectionResult>(addCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(addCollectionResult.MoveCollectionAlreadyExist, true);
+            Assert.That(addCollectionResult.MoveCollectionAlreadyExist, Is.True);
         }
     }
 }

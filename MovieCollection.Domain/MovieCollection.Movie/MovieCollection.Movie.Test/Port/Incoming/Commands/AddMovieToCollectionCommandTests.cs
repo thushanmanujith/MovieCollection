@@ -13,7 +13,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
         public async Task Dispatch_ShoulAdddMovieToCollection()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var collection = new Collection(1, "Test Collection", user.Id);
             var addMovieToCollectionCommand = new AddMovieToCollectionCommand(user.Id, movie.Id);
@@ -26,14 +26,14 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var addMovieResult = commandDispatcher.Dispatch<AddMovieToCollectionCommand, AddMovieToCollectionResult>(addMovieToCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(addMovieResult.IsSuccess, true);
+            Assert.That(addMovieResult.IsSuccess, Is.True);
         }
 
         [Test]
         public async Task Dispatch_WhenUserDoesNotHaveCollection_ShouldRaiseCollectionNotFoundError()
         {
             // Arrange
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var movie = new Domain.Entities.Movie("Movie 1", "Movie descrip", string.Empty, "en-US");
             var addMovieToCollectionCommand = new AddMovieToCollectionCommand(user.Id, movie.Id);
 
@@ -43,7 +43,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var addMovieResult = commandDispatcher.Dispatch<AddMovieToCollectionCommand, AddMovieToCollectionResult>(addMovieToCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(addMovieResult.CollectionNotFound, true);
+            Assert.That(addMovieResult.CollectionNotFound, Is.True);
         }
 
 
@@ -52,7 +52,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
         {
             // Arrange
             var movieId = 1;
-            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User);
+            var user = new User(1, "thu@gmail.com", "abcD@123", "Thushan", "Manujith", UserRole.User, new DateTime(2024, 01, 01));
             var collection = new Collection(1, "Test Collection", user.Id);
             var addMovieToCollectionCommand = new AddMovieToCollectionCommand(user.Id, movieId);
 
@@ -63,7 +63,7 @@ namespace MovieCollection.Movie.Test.Port.Incoming.Commands
             var addMovieResult = commandDispatcher.Dispatch<AddMovieToCollectionCommand, AddMovieToCollectionResult>(addMovieToCollectionCommand).Result;
 
             // Assert
-            Assert.AreEqual(addMovieResult.MovieNotFound, true);
+            Assert.That(addMovieResult.MovieNotFound, Is.True);
         }
     }
 }
